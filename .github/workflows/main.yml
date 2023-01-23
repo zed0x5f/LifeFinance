@@ -1,0 +1,34 @@
+on:
+  push:
+    branches: "master"
+name: 🚀 Deploy to dev site
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+      - name: Bucket actions
+        uses: actions/setup-node@master
+        with:
+          node-version: 19
+      - run: npm i
+      - run: npm run build
+      - name: Publish
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ./dist/*
+          host: ${{ secrets.host }}
+          remote: dist
+          user: ${{ secrets.user }}
+          key: ${{ secrets.key }}
+          port: 22
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.host }}
+          username: ${{ secrets.user }}
+          key: ${{ secrets.key }}
+          port: 22
+          script: sudo cp -r dist/. /var/www/superiorhealthgroup/html
