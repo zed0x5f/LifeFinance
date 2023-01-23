@@ -1,0 +1,45 @@
+@import "../../../assets/scss/globals";
+.team {
+  .member {
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    background: #fff;
+    img {
+      max-width: 60%;
+      border-radius: 50%;
+      margin: 0 0 30px 0;
+    }
+    h4 {
+      font-weight: 700;
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+    span {
+      font-style: italic;
+      display: block;
+      font-size: 13px;
+    }
+    p {
+      padding-top: 10px;
+      font-size: 14px;
+      font-style: italic;
+      color: $color_10;
+    }
+    .social {
+      margin-top: 15px;
+      a {
+        color: $color_16;
+        transition: 0.3s;
+        &:hover {
+          color: $color_2;
+        }
+      }
+      i {
+        font-size: 18px;
+        margin: 0 2px;
+      }
+    }
+  }
+}
