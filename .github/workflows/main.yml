@@ -24,7 +24,7 @@ jobs:
           #user: ${{ secrets.user }}
           key: ${{ secrets.key }}
           username: ${{ secrets.user }}
-          password: ${{ secrets.PASSWORD }}
+          #password: ${{ secrets.PASSWORD }}
           source: ./dist/*
           target: dist
           port: 22
