@@ -12,7 +12,7 @@ jobs:
       - name: Bucket actions
         uses: actions/setup-node@master
         with:
-          node-version: 19
+          node-version: 18
       - run: npm i
       - run: npm run build
       - name: Publish
