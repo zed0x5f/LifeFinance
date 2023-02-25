@@ -16,13 +16,17 @@ jobs:
       - run: npm i
       - run: npm run build
       - name: Publish
-        uses: nogsantos/scp-deploy@master
+        uses: appleboy/scp-action@master
         with:
-          src: ./dist/*
+          #src: ./dist/*
           host: ${{ secrets.host }}
-          remote: dist
-          user: ${{ secrets.user }}
-          key: ${{ secrets.key }}
+          #remote: dist
+          #user: ${{ secrets.user }}
+          #key: ${{ secrets.key }}
+          username: ${{ secrets.user }}
+          password: ${{ secrets.password }}
+          source: ./dist/*
+          targe: dist
           port: 22
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v0.1.6
