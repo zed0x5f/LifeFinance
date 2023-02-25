@@ -33,6 +33,7 @@ jobs:
         with:
           host: ${{ secrets.host }}
           username: ${{ secrets.user }}
-          key: ${{ secrets.key }}
+          #key: ${{ secrets.key }}
+          password: ${{ secrets.PASSWORD }}
           port: 22
           script: sudo cp -r dist/. /var/www/superiorhealthgroup/html
