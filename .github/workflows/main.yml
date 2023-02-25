@@ -26,7 +26,7 @@ jobs:
           username: ${{ secrets.user }}
           password: ${{ secrets.password }}
           source: ./dist/*
-          targe: dist
+          target: dist
           port: 22
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v0.1.6
